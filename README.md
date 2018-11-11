@@ -21,6 +21,9 @@ Signals sent to AirCon and send Signals to aircon.
  - [DoubleResetDetector](https://github.com/datacute/DoubleResetDetector)
  - [IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266/wiki#ir-receiving)
 
+
+![Circuit EasyEDA](images/easyeda_circuit_diagram.png)
+
 ## Configuring to join HiveCentral Network.
 Setting up BOT to join a new Wifi AccessPoint and HiveCentral MQTT Cluster.
  - Double tap the 'RSET' button on the NodeMcu 12e to switch to **ConfigMode**  
