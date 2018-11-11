@@ -5,6 +5,8 @@ Project for ES8266 NodeMcu 12e MicroController. Device to join as Client BOT for
 HiveBot has sensors for Temperature & Humidity using DHT22 and Infrared Transreciver to listen to IR 
 Signals sent to AirCon and send Signals to aircon. 
 
+![Circuit EasyEDA](images/small_device_pic.png)
+
 ## Features
   - MQTT Connectors to talk with **HiveCentral**
   - Function : DHT22 Sensors for Temperature and Humidity 
