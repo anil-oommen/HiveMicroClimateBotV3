@@ -1,43 +1,32 @@
 
-Important , current PubSub does not allow the messags to be stored on Broker. 
-As this requires some tracking in the IOT which should be persisted. 
-As a resuult when the IOt is in DeepSleep any notification from Server is lost.
-https://github.com/knolleary/pubsubclient/issues/200
 
+# HiveBot MicroClimate IOT Device
+Project for ES8266 NodeMcu 12e MicroController. Device to join as Client BOT for **HiveCentral**. 
+HiveBot has sensors for Temperature & Humidity using DHT22 and Infrared Transreciver to listen to IR 
+Signals sent to AirCon and send Signals to aircon. 
 
-https://myesp8266.blogspot.sg/2016/12/bmp280-and-esp8266.html
-http://arduinoprojects.uk/iot-esp8266-barometer-using-bmp280/
-https://learn.adafruit.com/assets/26858
+## Features
+  - MQTT Connectors to talk with **HiveCentral**
+  - Function : DHT22 Sensors for Temperature and Humidity 
+  - Function : IR Signals from Aircon
+  - Function : DeepSleep for PowerSaving mode.
+  - Function : LEDs red/green for connection mode.
+  - Enable/disable Functions independently from HiveCentral
+  - Integrate **WifiManager** for easy Wifi & Application Configuration 
 
-http://192.168.1.103:8080/swagger-ui.html#!/bot-controller/registerUsingPOST
+## Libraries & Resources
+ - [WifiManager](https://github.com/tzapu/WiFiManager)
+ - [MQTT PubSubClient](https://pubsubclient.knolleary.net/)
+ - [ArduinoJson](https://arduinojson.org/?utm_source=meta&utm_medium=library.properties)
+ - [DoubleResetDetector](https://github.com/datacute/DoubleResetDetector)
+ - [IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266/wiki#ir-receiving)
 
-iot.microcli.bot
-save
-{  
-   "hiveBotId":"OOMM.HIVE MICLIM.01",
-"enabledFunctions": "IR_LISTEN,MQTT,DHT22",
-"hiveInstructions": "LEDDANCE",
-"accessKey":"3cfe3256ba8b7a54b464370c68f59b6352d9907979bb8ab037e5da9f0ff7a23d"
-}
+## Configuring to join HiveCentral Network.
+Setting up BOT to join a new Wifi AccessPoint and HiveCentral MQTT Cluster.
+ - Double tap the 'RSET' button on the NodeMcu 12e to switch to **ConfigMode**  
+ - BOT will restart in **AP (Soft Access Point Mode)** Mode and start new WIFI AccessPoint "HIVE_BOT_ID" 
+ - Connect to Wifi AccessPoint and access **WifiManager** page http://192.168.4.1 to configure
+ - BOT will restart and connect to Wifi, if not sucessfull will fallback to **ConfigMode** 
 
+Known Issue : You may need to to toggle different AccessPoint 
 
-{"hiveBotId":"OOMM.HIVE MICLIM.01","accessKey":"3cfe325"}
-
-Instructions 
-REBOOT
-IRAC_OFF
-
-{"hiveBotId":"OOMM.HIVE MICLIM.01","accessKey":"3cfe325","infoType":"SensorData","dataMap": { } }
-
-
-  String requestPayload = "{\"hiveBotId\": \"";
-    requestPayload += bot_id;
-    requestPayload += "\",\"accessKey\": \"";
-    requestPayload += hive_accesskey;
-    requestPayload += "\",\"dataMap\": {";
-    if(includeDataMap){
-      requestPayload += hiveDataMapJSONContent;
-    }
-    requestPayload += "}}";
-	
-{"hiveBotId": "Controller","accessKey": "0","dataType": "DataRetrieve"}
