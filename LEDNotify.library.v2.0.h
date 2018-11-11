@@ -3,7 +3,7 @@
  * Used 3 x 9K Ressistor to get 3.3 K Ohm.
  */
 
-#define LED_NOTIFY_AVALI "OOM Library Notify is available"
+#define LED_NOTIFY_AVALI "Library Notify is available"
 
 /* LED GREEN NOTIFY */
 int GREEN_LED_PIN = D2;

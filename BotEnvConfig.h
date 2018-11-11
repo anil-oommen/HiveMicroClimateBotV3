@@ -4,6 +4,9 @@
 #define WIFI_MANAGER_DEBUG false
 #define SPIFFS_CONFIG_JSONFILE "/config.json"
 #define HIVE_BOT_ID "HIVEBOT_MICLIM.03"
+#define HIVE_BOT_VERSION "v3.0"
+#define HIVE_BOT_ACCESSKEY "1b4b882772c"
+#define HIVE_BOT_MQTTCLIENT_ID "miclim_esp8266_v3"
 
 /* Config Settings from the WifiManager @ Wifi Setup.*/
 char config_mqtt_server[50] = "";
@@ -13,12 +16,9 @@ char config_mqtt_pswd[50] = "";
 
 
 /* MQTT Connection Settings ------------- */
-// const char* mqtt_server = "192.168.1.200";
-int         mqtt_server_port = 1883;
-const char* mqtt_microclima_id = "miclim_esp8266_v3";
+int         mqtt_server_port = 1883;  //TODO hardcoded for now, not copied from config_mqtt_server_port
+const char* mqtt_microclima_id = HIVE_BOT_MQTTCLIENT_ID;
 int         mqtt_subscribe_qos = 1;
-//const char* mqtt_microclima_user = "hivebot";
-//const char* mqtt_microclima_pswd = "hivebot2011"; 
 
 const char* mqtt_controller_notify_topic =                "hivecentral/controller/microclimate";
 const char* mqtt_botcli_recieve_topic =                   "hivecentral/botclients/microclimate";
@@ -29,8 +29,8 @@ const char* bot_accessPointName  = HIVE_BOT_ID;
 String bot_id = HIVE_BOT_ID;
 String bot_desc = "MicroClimate BOT@IOT HiveCentral";
 const char bot_compile_date[] = __DATE__ " " __TIME__;
-String bot_version = "v3.0 ";
-String hive_accesskey = "1b4b882772c";
+String bot_version = HIVE_BOT_VERSION;
+String hive_accesskey = HIVE_BOT_ACCESSKEY;
 
 
 
@@ -68,7 +68,7 @@ bool loadConfigFromFile() {
   Serial.print("DEBUG: [CONFIG] Loaded from Json[");
   Serial.print(config_mqtt_server);Serial.print(", ");
   Serial.print(config_mqtt_user);Serial.print(", ");
-  Serial.print(config_mqtt_pswd);Serial.print(", ");
+  Serial.print(config_mqtt_pswd);Serial.print(" ");
   Serial.println("] ");
   
   return true;
@@ -85,7 +85,7 @@ bool saveConfigToFile() {
   Serial.print("DEBUG: [CONFIG] Saving to Json[");
   Serial.print(config_mqtt_server);Serial.print(", ");
   Serial.print(config_mqtt_user);Serial.print(", ");
-  Serial.print(config_mqtt_pswd);Serial.print(", ");
+  Serial.print(config_mqtt_pswd);Serial.print(" ");
   Serial.println("] ");
   
 

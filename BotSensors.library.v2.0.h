@@ -1,6 +1,3 @@
-
-
-
 /*  DHT22 , Sensor 1
  *  Library Required 'Adafruit_Unified_Sensor'
  *  

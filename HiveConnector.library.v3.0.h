@@ -10,6 +10,8 @@
 
 
 /*
+ * ------------ IMPORTANT , NEEDED TO ENSURE MQTT PUBLISH DOES NOT FAIL --------------------------
+ * 
  * MQTT Library Required. PubSubClient MQTT
  * https://pubsubclient.knolleary.net/
  * Important , MaxLimit on the 
@@ -171,17 +173,7 @@ void callbackMqttMessage(char* topic, byte* payload, unsigned int length) {
     }
   }
   
-  /*
-  byte* p = (byte*)malloc(length);
-  // Copy the payload to the new buffer
-  memcpy(p,payload,length);
-  //client.publish("outTopic", p, length);
-  String recvMsg = String((char *)p);
-  Serial.println(recvMsg);
-  //callbackMqttMessageRecieved(recvMsg);
-  // Free the memory
-  free(p);
-  */
+
 }
 WiFiClient wifiClient;
 PubSubClient client(config_mqtt_server, mqtt_server_port, callbackMqttMessage, wifiClient);

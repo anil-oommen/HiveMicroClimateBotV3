@@ -1,17 +1,12 @@
-
 /* 
  *  HiveCentral BOT for MicroClimate Sensors and AirCon Controller over IR.
  *  MicroController ESP8266 12e NodeMCU. 
  *  Connected Components :
  *  -- LED Connected RED ( +v=D1, -v=:Resistory:GND25 )
  *  -- LED Connected GREEN ( +v=D2, -v=:Resistory:GND25 )
- *  
- *  Features :
- *  -- 
- *  Change To Your Environment Settings, refer "HiveBotParams.default.library.dont.change.h" 
  */
 
-#include "BotEnvConfig.private.h" 
+#include "BotEnvConfig.h" 
 #include "LEDNotify.library.v2.0.h"
 #include "HiveUtility.library.v2.0.h"
 #include "BotSensors.library.v2.0.h"
@@ -128,23 +123,7 @@ void loop()
   
   loopHiveConnector();
   
-  /*greenLEDBlinkLong(1);
-  redLEDBlinkLong(1);
-  Serial.println("Blink");
-  readSensors();
-  if(loopAndCheckHiveConnected()){
-    //Send MQTT Connection.s
-    String sampleMessage = "T00.";
-    sampleMessage +=String(counter);
-    publishToHive(sampleMessage);
-    counter++;
-  }
-  delay(3000);
-  */
   if(isHiveConnected()){
-
-    //String sampleMessage = "T00.";
-    //sampleMessage +=String(pubTimer.runCounts());
 
     //Check time to collect Sensor Data
     if(sensorTimer.isDueForRun()){
@@ -191,15 +170,12 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
   Serial.println("INFO : [HIVEBOT] Booting up.");
-  //Serial.println("Setup Done");
-  //prntBanner_Bootup();
   delay(10);
   setupLEDNotify();
   setupHiveConnector();
-  //Connected to Wifi Post AP Setup.
-  //Setup 
+  // Ready & Connected to Wifi Post AP Setup.
   setupIRModule();
 }
 
-//void loop(){}
+
 

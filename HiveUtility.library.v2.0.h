@@ -1,32 +1,3 @@
-
-/* Banner Generator http://patorjk.com/software/taag , Use 'Digital' */
-
-
-String prntBanner_HiveBotStartup() {
-Serial.println(" +-+-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+");
-Serial.println(" |H|I|V|E|B|O|T| | | | | | | | | | | | | | | | | | | | | | | | | | | |");
-Serial.print(" ");
-Serial.print(bot_id);
-Serial.print(" (");
-Serial.print(bot_version);
-Serial.print(")");
-Serial.println( bot_desc );
-Serial.println(" +-+-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+");
-}
-
-String prntBanner_InstructionExecute() {
-Serial.println(" +-+-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+");
-Serial.println(" |I|n|s|t|r|u|c|t|i|o|n| |E|x|e|c|u|t|e| |S|t|a|r|t| |-|-|-|-|-|-|-|-|");
-Serial.println(" +-+-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+");
-}
-
-String prntBanner_InstructionComplete() {
-Serial.println(" +-+-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+");
-Serial.println(" |I|n|s|t|r|u|c|t|i|o|n| |C|o|m|p|l|e|t|e|d| |-|-|-|-|-|-|-|-|");
-Serial.println(" +-+-+-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+");
-}
-
-
 /*
  * EventTimer allow you schedule Event recuring for a specified time.
  */
