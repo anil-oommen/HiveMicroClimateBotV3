@@ -17,7 +17,7 @@
  * Our EventTimes and Enabled Switches
  */
 
-EventTimer heartbeatTimer("HeartBeat",      1000 * 60 * 5 , true,   false); //every x mins
+EventTimer heartbeatTimer("HeartBeat",      1000 * 60 * 5 , true,   false); //every x mins, works only if DeepSleep is not enabled. else use the catchup.
 EventTimer sensorTimer("Sensor",            1000 * 60  , true,   true);  //every x seconds, Run from bootuptime or when enabled; Use
 EventTimer irRecieverFunction("IRReciever", 500       , false,  false); //How frequent we should give control
 EventTimer deepsleepFunction("Deepsleep",   1000 * 10 , false,  false); //every x Seconds , No need to run immediate if enabled. Give time for others.
@@ -176,6 +176,3 @@ void setup() {
   // Ready & Connected to Wifi Post AP Setup.
   setupIRModule();
 }
-
-
-

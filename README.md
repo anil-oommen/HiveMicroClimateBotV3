@@ -16,6 +16,20 @@ Signals sent to AirCon and send Signals to aircon.
   - Enable/disable Functions independently from HiveCentral
   - Integrate **WifiManager** for easy Wifi & Application Configuration 
 
+## Power Consumption 
+1 x Lithium Ion 18650 (3.7 v) Tested Running time : 50 Hours 
+```
+USB Power Measure : 5.05 v
+DeepSleep 	.009 A, .045W
+Running 	.080 A, .392W
+
+18650 Power Measure : 3.7 v
+DeepSleep 	.008 A, .029W
+Running 	.080 A, .296W
+```
+
+  
+  
 ## Libraries & Resources
  - [WifiManager](https://github.com/tzapu/WiFiManager)
  - [MQTT PubSubClient](https://pubsubclient.knolleary.net/)
